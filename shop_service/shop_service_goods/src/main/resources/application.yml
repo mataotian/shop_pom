@@ -1,0 +1,32 @@
+spring:
+  thymeleaf:
+    cache: false
+  datasource:
+    url: jdbc:mysql:///shop1810
+    username: root
+    password: 123
+    driver-class-name: com.mysql.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      min-idle: 5
+      max-active: 100
+      max-wait: 60000
+      initial-size: 5
+      stat-view-servlet:
+        enabled: true
+        login-username: admin
+        login-password: admin
+        url-pattern: /druid/*
+        allow: 127.0.0.1
+      web-stat-filter:
+        enabled: true
+        url-pattern: /*
+server:
+  port: 9090
+dubbo:
+  protocol:
+    port: 20880
+  registry:
+    address: zookeeper://192.168.126.129:2181
+  application:
+    name: goodsService

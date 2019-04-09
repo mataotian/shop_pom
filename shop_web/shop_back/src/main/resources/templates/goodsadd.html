@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <base th:href="${#request.getContextPath()+'/'}"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Insert title here</title>
+    <!-- Invalid Stylesheet. This makes stuff look pretty. Remove it if you want the CSS completely valid -->
+    <!-- Reset Stylesheet -->
+    <link rel="stylesheet" href="resources/css/reset.css" type="text/css"
+          media="screen" />
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="resources/css/style.css" type="text/css"
+          media="screen" />
+    <link rel="stylesheet" href="resources/css/invalid.css" type="text/css"
+          media="screen" />
+    <link rel="stylesheet" href="resources/widget/webuploader/webuploader.css" type="text/css"
+          media="screen" />
+    <link rel="stylesheet" href="resources/widget/webuploader/mystyle.css" type="text/css"
+          media="screen" />
+
+    <!--                       Javascripts                       -->
+    <!-- jQuery -->
+    <script type="text/javascript"
+            src="resources/scripts/jquery-1.8.3.min.js"></script>
+    <!-- jQuery Configuration -->
+    <!--<script type="text/javascript"-->
+            <!--src="resources/scripts/simpla.jquery.configuration.js"></script>-->
+    <script type="text/javascript"
+            src="resources/widget/webuploader/webuploader.min.js"></script>
+    <script type="text/javascript"
+            src="resources/widget/webuploader/upload.js"></script>
+</head>
+<body>
+<div id="main-content">
+    <div class="content-box">
+        <div class="content-box-content">
+            <div class="tab-content default-tab" id="tab2">
+                <form action="#" method="post">
+                    <fieldset>
+                        <!-- Set class to "column-left" or "column-right" on fieldsets to divide the form into columns -->
+                        <p>
+                            <label>商品名称</label> <input
+                                class="text-input small-input" type="text" id="small-input"
+                                name="gname" />
+                            <!-- Classes for input-notification: success, error, information, attention -->
+                        </p>
+                        <p>
+                            <label>商品价格</label> <input
+                                class="text-input small-input" type="text"
+                                name="gprice" />
+                            <!-- Classes for input-notification: success, error, information, attention -->
+                        </p>
+                        <p>
+                            <label>商品图片</label>
+                        <div id="wrapper">
+                            <div id="container">
+                                <!--头部，相册选择和格式选择-->
+                                <div id="uploader">
+                                    <div class="queueList">
+                                        <div id="dndArea" class="placeholder">
+                                            <div id="filePicker"></div>
+                                        </div>
+                                    </div>
+                                    <div class="statusBar" style="display:none;">
+                                        <div class="progress">
+                                            <span class="text">0%</span>
+                                            <span class="percentage"></span>
+                                        </div><div class="info"></div>
+                                        <div class="btns">
+                                            <div id="filePicker2"></div><div class="uploadBtn">开始上传</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        </p>
+                        <p>
+                            <label>商品描述</label>
+                            <textarea class="text-input textarea wysiwyg" id="textarea"
+                                      name="ginfo" cols="50" rows="15"></textarea>
+                        </p>
+                        <p>
+                            <input class="mybutton" type="submit" value="提交" />
+                        </p>
+                    </fieldset>
+                    <div class="clear"></div>
+                    <!-- End .clear -->
+                </form>
+            </div>
+            <!-- End #tab2 -->
+        </div>
+        <!-- End .content-box-content -->
+    </div>
+</div>
+<!-- End #main-content -->
+</body>
+</html>
