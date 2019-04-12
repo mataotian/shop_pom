@@ -1,5 +1,7 @@
 package com.qf.entity;
 
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -11,6 +13,8 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Goods  implements Serializable {
+
+    @TableId(type=IdType.AUTO)
     private int id;
     private String gname;
     private BigDecimal gprice;
@@ -18,6 +22,6 @@ public class Goods  implements Serializable {
     private String ginfo;
     private String gimage;
     private int status;
-    private Date createtime;
+    private Date createtime=new Date();
     private int tid;
 }

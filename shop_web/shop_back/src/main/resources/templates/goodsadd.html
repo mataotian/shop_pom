@@ -35,12 +35,13 @@
     <div class="content-box">
         <div class="content-box-content">
             <div class="tab-content default-tab" id="tab2">
-                <form action="#" method="post">
+                <form action="/goods/add" method="post">
+                    <input type="hidden" name="status" value="1"/>
                     <fieldset>
                         <!-- Set class to "column-left" or "column-right" on fieldsets to divide the form into columns -->
                         <p>
                             <label>商品名称</label> <input
-                                class="text-input small-input" type="text" id="small-input"
+                                class="text-input small-input" type="text"
                                 name="gname" />
                             <!-- Classes for input-notification: success, error, information, attention -->
                         </p>
@@ -48,6 +49,12 @@
                             <label>商品价格</label> <input
                                 class="text-input small-input" type="text"
                                 name="gprice" />
+                            <!-- Classes for input-notification: success, error, information, attention -->
+                        </p>
+                        <p>
+                            <label>商品库存</label> <input
+                                class="text-input small-input" type="text"
+                                name="gsave" />
                             <!-- Classes for input-notification: success, error, information, attention -->
                         </p>
                         <p>
@@ -61,6 +68,7 @@
                                             <div id="filePicker"></div>
                                         </div>
                                     </div>
+                                    <input type="hidden" id="images" name="gimage" value=""/>
                                     <div class="statusBar" style="display:none;">
                                         <div class="progress">
                                             <span class="text">0%</span>

@@ -30,3 +30,5 @@ dubbo:
     address: zookeeper://192.168.126.129:2181
   application:
     name: goodsService
+  consumer:
+    check: false
