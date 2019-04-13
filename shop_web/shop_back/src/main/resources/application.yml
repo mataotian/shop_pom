@@ -8,8 +8,8 @@ dubbo:
     name: back_web
   registry:
     address: zookeeper://192.168.126.129:2181
-    consumer:
-      check: false
+  consumer:
+    check: false
 fdfs:
   tracker-list:
     - 192.168.126.129:22122
