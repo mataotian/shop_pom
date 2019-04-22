@@ -12,6 +12,31 @@
     <script type="text/javascript" src="js/topNav.js" ></script>
     <script type="text/javascript" src="js/focus.js" ></script>
     <script type="text/javascript" src="js/shop_home_tab.js" ></script>
+    <script type="text/javascript" src="http://localhost:8084/js/tologin.js" ></script>
+    <script>
+        $(function () {
+            $.ajax({
+               url: "http://localhost:8086/car/list",
+                success: function (data) {
+                    if(data){
+                        $("#car_number").html(data.length);
+                        alert(data.length);
+                        var html = "<ul>";
+                        for (var i=0;i<data.length;i++){
+                            var car = data[i];
+                            html += "<li>";
+                            html += car.goods.gname;
+                            html += "</li>";
+                        }
+                        html += "</ul>";
+                        $("#car_id").html(html);
+                        }
+                    },
+                dataType: "jsonp",
+                jsonpCallback: "showcars"
+            })
+        })
+    </script>
 </head>
 <body>
 <!-- Header  -wll-2013/03/24 -->
@@ -21,7 +46,7 @@
         <div class="shop_hd_topNav_all">
             <!-- Header TopNav Left -->
             <div class="shop_hd_topNav_all_left">
-                <p>您好，欢迎来到<b><a href="/">ShopCZ商城</a></b>[<a >登录</a>][<a >注册</a>]</p>
+                <p id="pid"></p>
             </div>
             <!-- Header TopNav Left End -->
 
@@ -35,7 +60,7 @@
                             <div class="topNav_menu_bd" style="display:none;" >
                                 <ul>
                                     <li><a title="已买到的商品" target="_top" href="#">已买到的商品</a></li>
-                                    <li><a title="个人主页" target="_top" href="#">个人主页</a></li>
+                                    <li><a title="我的订单" target="_top" href="http://localhost:8086/order/orderlist">我的订单</a></li>
                                     <li><a title="我的好友" target="_top" href="#">我的好友</a></li>
                                 </ul>
                             </div>
@@ -55,8 +80,8 @@
 
                     <li>
                         <div class="topNav_menu">
-                            <a href="#" class="topNavHover">购物车<b>0</b>种商品<i></i></a>
-                            <div class="topNav_menu_bd" style="display:none;">
+                            <a href="http://localhost:8086/car/carlist" class="topNavHover">购物车<b id="car_number">0</b>种商品<i></i></a>
+                            <div class="topNav_menu_bd" style="display:none;" id="car_id">
                                 <!--
                                 <ul>
                                   <li><a title="已售出的商品" target="_top" href="#">已售出的商品</a></li>
@@ -105,7 +130,7 @@
             </ul>
             <div class="clear"></div>
             <div class="search_form">
-                <form method="post" action="http://localhost:8082/search/searchByKeyword">
+                <form method="get" action="http://localhost:8082/search/searchByKeyword">
                     <div class="search_formstyle">
                         <input type="text" class="search_form_text" name="keyword" placeholder="搜索其实很简单！" />
                         <input type="submit" class="search_form_sub" title="搜索" />

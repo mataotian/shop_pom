@@ -12,6 +12,7 @@
     <script type="text/javascript" src="js/jquery.js" ></script>
     <script type="text/javascript" src="js/topNav.js" ></script>
     <script type="text/javascript" src="js/shop_goods.js" ></script>
+
 </head>
 <body>
 <!-- Header  -wll-2013/03/24 -->
@@ -590,7 +591,7 @@
                 </li>
                 <li>
                     <label>评价：</label>
-                    <span>0条评论</span>
+                    <span>99条评论</span>
                 </li>
                 <li class="goods_num">
                     <label>购买数量：</label>
@@ -598,11 +599,18 @@
                 </li>
                 <li style="padding:20px 0;">
                     <label>&nbsp;</label>
-                    <span><a href="" class="goods_sub goods_sub_gou" >加入购物车</a></span>
+                    <span><a href="javascript:addcar()" class="goods_sub goods_sub_gou" >加入购物车</a></span>
                 </li>
             </ul>
         </div>
     </div>
+    <script>
+        function addcar() {
+            var gid=${goods.id};
+            var gnumber=$("#good_nums").val();
+            location.href="http://localhost:8086/car/add?gid="+gid+"&gnumber="+gnumber;
+        }
+    </script>
     <!-- 商品展示 End -->
 
     <div class="clear mt15"></div>

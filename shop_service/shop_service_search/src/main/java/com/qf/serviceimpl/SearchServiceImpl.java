@@ -49,7 +49,6 @@ public class SearchServiceImpl implements ISearchService {
             e.printStackTrace();
         }
 
-
         return list;
     }
 

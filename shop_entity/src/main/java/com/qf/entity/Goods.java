@@ -13,7 +13,7 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Goods  implements Serializable {
-
+    //一定要记得序列化 不然就是bug
     @TableId(type=IdType.AUTO)
     private int id;
     private String gname;
